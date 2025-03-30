@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dal Makhani Recipe | Fara's Kitchen</title>
+<meta name="description" content="Learn how to make authentic Dal Makhani - a rich and creamy North Indian lentil dish from Fara's Kitchen">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+darkMode: ["class"],
+theme: {
+container: {
+center: true,
+padding: "2rem",
+screens: {
+"2xl": "1400px",
+},
+},
+extend: {
+colors: {
+border: "hsl(var(--border))",
+input: "hsl(var(--input))",
+ring: "hsl(var(--ring))",
+background: "hsl(var(--background))",
+foreground: "hsl(var(--foreground))",
+primary: {
+  DEFAULT: "#e11d48",
+  foreground: "#ffffff",
+},
+secondary: {
+  DEFAULT: "hsl(var(--secondary))",
+  foreground: "hsl(var(--secondary-foreground))",
+},
+destructive: {
+  DEFAULT: "hsl(var(--destructive))",
+  foreground: "hsl(var(--destructive-foreground))",
+},
+muted: {
+  DEFAULT: "#f3f4f6",
+  foreground: "#6b7280",
+},
+accent: {
+  DEFAULT: "hsl(var(--accent))",
+  foreground: "hsl(var(--accent-foreground))",
+},
+card: {
+  DEFAULT: "#ffffff",
+  foreground: "#1f2937",
+},
+},
+borderRadius: {
+lg: "0.5rem",
+md: "0.375rem",
+sm: "0.25rem",
+},
+},
+},
+}
+</script>
+<style>
+:root {
+--background: 0 0% 100%;
+--foreground: 222.2 84% 4.9%;
+--card: 0 0% 100%;
+--card-foreground: 222.2 84% 4.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 222.2 84% 4.9%;
+--primary: 346 77% 50%;
+--primary-foreground: 210 40% 98%;
+--secondary: 210 40% 96.1%;
+--secondary-foreground: 222.2 47.4% 11.2%;
+--muted: 210 40% 96.1%;
+--muted-foreground: 215.4 16.3% 46.9%;
+--accent: 210 40% 96.1%;
+--accent-foreground: 222.2 47.4% 11.2%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 210 40% 98%;
+--border: 214.3 31.8% 91.4%;
+--input: 214.3 31.8% 91.4%;
+--ring: 346 77% 50%;
+--radius: 0.5rem;
+}
+
+.dark {
+--background: 222.2 84% 4.9%;
+--foreground: 210 40% 98%;
+--card: 222.2 84% 4.9%;
+--card-foreground: 210 40% 98%;
+--popover: 222.2 84% 4.9%;
+--popover-foreground: 210 40% 98%;
+--primary: 346 77% 50%;
+--primary-foreground: 210 40% 98%;
+--secondary: 217.2 32.6% 17.5%;
+--secondary-foreground: 210 40% 98%;
+--muted: 217.2 32.6% 17.5%;
+--muted-foreground: 215 20.2% 65.1%;
+--accent: 217.2 32.6% 17.5%;
+--accent-foreground: 210 40% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 210 40% 98%;
+--border: 217.2 32.6% 17.5%;
+--input: 217.2 32.6% 17.5%;
+--ring: 346 77% 50%;
+}
+</style>
+</head>
+<body class="bg-background text-foreground">
+<div class="flex flex-col min-h-screen">
+<!-- Header/Navbar -->
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+<div class="container flex h-16 items-center justify-between">
+<div class="flex items-center">
+<a href="index.html" class="text-2xl font-bold mr-8 text-primary">
+<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/culinary-chronicles-logo.png-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Fara's Kitchen Logo" class="h-10 w-auto" />
+</a>
+
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-6">
+<a href="index.html" class="text-sm font-medium hover:text-primary transition-colors">
+  Home
+</a>
+<a href="recipes.html" class="text-sm font-medium text-primary transition-colors">
+  Recipes
+</a>
+<a href="blog.html" class="text-sm font-medium hover:text-primary transition-colors">
+  Blog
+</a>
+<a href="videos.html" class="text-sm font-medium hover:text-primary transition-colors">
+  Videos
+</a>
+<a href="about.html" class="text-sm font-medium hover:text-primary transition-colors">
+  About
+</a>
+<a href="contact.html" class="text-sm font-medium hover:text-primary transition-colors">
+  Contact
+</a>
+</nav>
+</div>
+
+<div class="flex items-center space-x-4">
+<button class="p-2 rounded-md hover:bg-muted" id="theme-toggle">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+</button>
+
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-button" class="p-2 rounded-md hover:bg-muted md:hidden">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="close-icon" class="hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+</button>
+</div>
+</div>
+
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="md:hidden border-t hidden">
+<nav class="flex flex-col space-y-4 p-4">
+<a href="index.html" class="text-sm font-medium hover:text-primary transition-colors">
+Home
+</a>
+<a href="recipes.html" class="text-sm font-medium text-primary transition-colors">
+Recipes
+</a>
+<a href="blog.html" class="text-sm font-medium hover:text-primary transition-colors">
+Blog
+</a>
+<a href="videos.html" class="text-sm font-medium hover:text-primary transition-colors">
+Videos
+</a>
+<a href="about.html" class="text-sm font-medium hover:text-primary transition-colors">
+About
+</a>
+<a href="contact.html" class="text-sm font-medium hover:text-primary transition-colors">
+Contact
+</a>
+</nav>
+</div>
+</header>
+
+<main class="flex-grow">
+<!-- Recipe Header -->
+<section class="py-8 md:py-12 bg-muted">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-start gap-8">
+  <div class="w-full md:w-1/2">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Dal%20Makhani.jpg-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Dal Makhani" class="w-full h-auto rounded-lg shadow-md" />
+  </div>
+  <div class="w-full md:w-1/2">
+    <div class="flex items-center mb-4">
+      <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">North Indian</span>
+      <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">Punjabi</span>
+      <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1">Vegetarian</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">Dal Makhani</h1>
+    <p class="text-muted-foreground mb-6">A rich and creamy lentil dish made with whole black lentils (urad dal) and kidney beans (rajma), slow-cooked with spices and finished with butter and cream. This iconic Punjabi dish is known for its deep, complex flavors developed through long, slow cooking.</p>
+    
+    <div class="flex flex-wrap gap-6 mb-6">
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <div>
+          <p class="text-sm font-medium">Prep Time</p>
+          <p class="text-sm text-muted-foreground">8 hours (soaking)</p>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <div>
+          <p class="text-sm font-medium">Cook Time</p>
+          <p class="text-sm text-muted-foreground">3 hours</p>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <div>
+          <p class="text-sm font-medium">Total Time</p>
+          <p class="text-sm text-muted-foreground">11 hours</p>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <div>
+          <p class="text-sm font-medium">Servings</p>
+          <p class="text-sm text-muted-foreground">6 servings</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex items-center mb-6">
+      <div class="flex mr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span class="text-sm text-muted-foreground ml-2">(112 reviews)</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap gap-4">
+      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+        Print Recipe
+      </button>
+      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+        Save Recipe
+      </button>
+      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        Share
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Recipe Content -->
+<section class="py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <!-- Ingredients -->
+  <div class="md:col-span-1">
+    <div class="bg-card rounded-lg shadow-sm p-6 sticky top-24">
+      <h2 class="text-2xl font-bold mb-6">Ingredients</h2>
+      
+      <div class="mb-6">
+        <h3 class="font-bold mb-3">For the Dal:</h3>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1 cup whole black lentils (sabut urad dal)</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1/4 cup red kidney beans (rajma)</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>4-5 cups water</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1 teaspoon salt</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb-6">
+        <h3 class="font-bold mb-3">For the Tempering:</h3>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>3 tablespoons ghee (clarified butter)</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1 large onion, finely chopped</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>2 tablespoons ginger-garlic paste</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>2-3 green chilies, slit</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>2 large tomatoes, pureed</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1 teaspoon cumin seeds</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1 teaspoon red chili powder</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1/2 teaspoon turmeric powder</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1 tablespoon coriander powder</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1 teaspoon garam masala</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>Salt to taste</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-3">For the Finishing:</h3>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>2 tablespoons butter</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1/4 cup heavy cream</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>2 tablespoons fresh coriander leaves, chopped</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 mt-1 text-primary"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>1 tablespoon kasuri methi (dried fenugreek leaves)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Instructions -->
+  <div class="md:col-span-2">
+    <h2 class="text-2xl font-bold mb-6">Instructions</h2>
+    
+    <div class="space-y-8">
+      <div>
+        <h3 class="text-xl font-bold mb-4">Soaking and Cooking the Lentils</h3>
+        <ol class="space-y-4">
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">1</span>
+            <p>Wash the black lentils and kidney beans thoroughly. Soak them together in plenty of water for at least 8 hours or overnight.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">2</span>
+            <p>Drain the soaked lentils and beans. Place them in a pressure cooker with 4-5 cups of fresh water and 1 teaspoon of salt.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">3</span>
+            <p>Pressure cook for about 15-18 whistles or until the lentils and beans are completely soft and mushy. If using a regular pot, cook for about 1.5-2 hours, adding more water if needed.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">4</span>
+            <p>Once cooked, mash some of the lentils with the back of a ladle to create a creamy texture. Keep aside.</p>
+          </li>
+        </ol>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-bold mb-4">Preparing the Tempering</h3>
+        <ol class="space-y-4">
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">1</span>
+            <p>Heat ghee in a large, heavy-bottomed pot or Dutch oven.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">2</span>
+            <p>Add cumin seeds and let them splutter.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">3</span>
+            <p>Add the chopped onions and sauté until they turn golden brown, about 5-7 minutes.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">4</span>
+            <p>Add the ginger-garlic paste and green chilies. Sauté for another 2 minutes until the raw smell disappears.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">5</span>
+            <p>Add the tomato puree, red chili powder, turmeric powder, and coriander powder. Cook until the oil starts to separate from the masala, about 5-7 minutes.</p>
+          </li>
+        </ol>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-bold mb-4">Combining and Slow Cooking</h3>
+        <ol class="space-y-4">
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">1</span>
+            <p>Add the cooked lentils and beans to the tempering. Mix well.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">2</span>
+            <p>Add salt to taste and about 1 cup of water if the dal is too thick. The consistency should be like a thick soup.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">3</span>
+            <p>Bring to a boil, then reduce the heat to low. Cover and simmer for at least 1 hour, stirring occasionally to prevent sticking. The longer you cook, the richer the flavor will be.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">4</span>
+            <p>If the dal becomes too thick during cooking, add a little hot water to adjust the consistency.</p>
+          </li>
+        </ol>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-bold mb-4">Finishing Touches</h3>
+        <ol class="space-y-4">
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">1</span>
+            <p>After the slow cooking is complete, add the garam masala and crushed kasuri methi (dried fenugreek leaves). Mix well.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">2</span>
+            <p>Add the butter and cream. Stir gently to incorporate.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">3</span>
+            <p>Simmer for another 5-10 minutes on low heat.</p>
+          </li>
+          <li class="flex">
+            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-4">4</span>
+            <p>Garnish with fresh coriander leaves and a swirl of cream before serving.</p>
+          </li>
+        </ol>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-bold mb-4">Serving</h3>
+        <p class="mb-4">Serve hot with naan, roti, or steamed rice. Dal Makhani tastes even better the next day as the flavors develop further.</p>
+        <div class="bg-muted p-4 rounded-md">
+          <p class="text-sm italic">Tip: For an authentic restaurant-style flavor, you can add a small piece of charcoal to a metal bowl placed in the center of the dal. Pour a little ghee on the charcoal, and when it starts to smoke, quickly cover the pot with a lid. Let it sit for 5 minutes to infuse a smoky flavor into the dal.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Nutritional Information -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Nutritional Information</h2>
+      <div class="bg-muted p-6 rounded-lg">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center">
+            <p class="text-lg font-bold text-primary">320</p>
+            <p class="text-sm text-muted-foreground">Calories</p>
+          </div>
+          <div class="text-center">
+            <p class="text-lg font-bold text-primary">14g</p>
+            <p class="text-sm text-muted-foreground">Fat</p>
+          </div>
+          <div class="text-center">
+            <p class="text-lg font-bold text-primary">35g</p>
+            <p class="text-sm text-muted-foreground">Carbs</p>
+          </div>
+          <div class="text-center">
+            <p class="text-lg font-bold text-primary">15g</p>
+            <p class="text-sm text-muted-foreground">Protein</p>
+          </div>
+        </div>
+        <p class="text-xs text-center mt-4 text-muted-foreground">*Per serving (approximately 1 cup)</p>
+      </div>
+    </div>
+    
+    <!-- Chef's Notes -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Chef's Notes</h2>
+      <div class="bg-card border rounded-lg p-6">
+        <p class="italic mb-4">"Dal Makhani is all about patience - the longer you cook it, the better it tastes. In traditional Punjabi homes, it's often cooked overnight on a low flame, allowing the flavors to develop and intensify."</p>
+        <p class="italic">"The key to a rich and creamy dal makhani is to mash some of the lentils during cooking to release their starch. This creates that signature creamy texture without having to add too much cream."</p>
+        <div class="flex items-center mt-4">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/culinary-chronicles-logo.png-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Fara's Kitchen" class="w-10 h-10 rounded-full mr-3" />
+          <p class="font-medium">Fara, Kasaragod</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Comments Section -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Reviews & Comments</h2>
+      <div class="space-y-6">
+        <div class="bg-card border rounded-lg p-6">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold mr-3">A</div>
+              <div>
+                <p class="font-medium">Amit Singh</p>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+            </div>
+            <p class="text-sm text-muted-foreground">March 10, 2023</p>
+          </div>
+          <p>This recipe is as authentic as it gets! I've tried many dal makhani recipes but this one truly captures the rich, creamy texture and deep flavor that I remember from my favorite restaurant in Delhi. The slow cooking really makes a difference - I let it simmer for almost 2 hours and the result was incredible. Served it with garlic naan and it was a hit with the whole family!</p>
+        </div>
+        
+        <div class="bg-card border rounded-lg p-6">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold mr-3">S</div>
+              <div>
+                <p class="font-medium">Sonia Kapoor</p>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+              </div>
+            </div>
+            <p class="text-sm text-muted-foreground">February 18, 2023</p>
+          </div>
+          <p>I made this for a dinner party and everyone loved it! The tip about mashing some of the lentils was really helpful for getting that creamy texture. I used a slow cooker instead of a pot and let it cook for about 6 hours on low - it turned out perfect. The kasuri methi at the end adds such a wonderful aroma. Will definitely make this again!</p>
+        </div>
+        
+        <!-- Add Comment Form -->
+        <div class="bg-card border rounded-lg p-6">
+          <h3 class="font-bold mb-4">Leave a Review</h3>
+          <div class="flex items-center mb-4">
+            <p class="mr-2">Rating:</p>
+            <div class="flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted hover:text-yellow-400 cursor-pointer"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted hover:text-yellow-400 cursor-pointer"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted hover:text-yellow-400 cursor-pointer"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted hover:text-yellow-400 cursor-pointer"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted hover:text-yellow-400 cursor-pointer"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+          </div>
+          <form class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                <input type="text" id="name" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                <input type="email" id="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required />
+              </div>
+            </div>
+            <div>
+              <label for="comment" class="block text-sm font-medium mb-1">Your Review</label>
+              <textarea id="comment" rows="4" class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required></textarea>
+            </div>
+            <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+              Submit Review
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Related Recipes -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">You Might Also Like</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+          <a href="recipe-detail-chole-bhature.html" class="block">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Chole%20Bhature.jpg-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Chole Bhature" class="w-full h-48 object-cover" />
+          </a>
+          <div class="p-4">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1">North Indian</span>
+            <h3 class="font-bold mt-2">
+              <a href="recipe-detail-chole-bhature.html" class="hover:text-primary transition-colors">Chole Bhature</a>
+            </h3>
+          </div>
+        </div>
+        
+        <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+          <a href="recipe-detail-tandoori-chicken.html" class="block">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tandoori%20Chicken.jpg-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Tandoori Chicken" class="w-full h-48 object-cover" />
+          </a>
+          <div class="p-4">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1">North Indian</span>
+            <h3 class="font-bold mt-2">
+              <a href="recipe-detail-tandoori-chicken.html" class="hover:text-primary transition-colors">Tandoori Chicken</a>
+            </h3>
+          </div>
+        </div>
+        
+        <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+          <a href="recipe-detail-aloo-paratha.html" class="block">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aloo%20Paratha.jpg-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Aloo Paratha" class="w-full h-48 object-cover" />
+          </a>
+          <div class="p-4">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1">North Indian</span>
+            <h3 class="font-bold mt-2">
+              <a href="recipe-detail-aloo-paratha.html" class="hover:text-primary transition-colors">Aloo Paratha</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-muted py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+  <a href="index.html" class="inline-block mb-4">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/culinary-chronicles-logo.png-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Fara's Kitchen Logo" class="h-10 w-auto" />
+  </a>
+  <p class="text-muted-foreground mb-4">Sharing authentic Indian recipes and culinary stories from my kitchen to yours.</p>
+  <div class="flex space-x-4">
+    <a href="#" class="text-muted-foreground hover:text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </a>
+    <a href="#" class="text-muted-foreground hover:text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    </a>
+    <a href="#" class="text-muted-foreground hover:text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+    </a>
+    <a href="#" class="text-muted-foreground hover:text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+    </a>
+  </div>
+</div>
+
+<div>
+  <h3 class="font-bold mb-4">Explore</h3>
+  <ul class="space-y-2">
+    <li><a href="index.html" class="text-muted-foreground hover:text-primary">Home</a></li>
+    <li><a href="recipes.html" class="text-muted-foreground hover:text-primary">Recipes</a></li>
+    <li><a href="blog.html" class="text-muted-foreground hover:text-primary">Blog</a></li>
+    <li><a href="videos.html" class="text-muted-foreground hover:text-primary">Videos</a></li>
+    <li><a href="about.html" class="text-muted-foreground hover:text-primary">About</a></li>
+    <li><a href="contact.html" class="text-muted-foreground hover:text-primary">Contact</a></li>
+  </ul>
+</div>
+
+<div>
+  <h3 class="font-bold mb-4">Recipe Categories</h3>
+  <ul class="space-y-2">
+    <li><a href="recipes.html?category=north-indian" class="text-muted-foreground hover:text-primary">North Indian</a></li>
+    <li><a href="recipes.html?category=south-indian" class="text-muted-foreground hover:text-primary">South Indian</a></li>
+    <li><a href="recipes.html?category=vegetarian" class="text-muted-foreground hover:text-primary">Vegetarian</a></li>
+    <li><a href="recipes.html?category=desserts" class="text-muted-foreground hover:text-primary">Desserts</a></li>
+    <li><a href="recipes.html?category=quick-easy" class="text-muted-foreground hover:text-primary">Quick & Easy</a></li>
+  </ul>
+</div>
+
+<div>
+  <h3 class="font-bold mb-4">Subscribe</h3>
+  <p class="text-muted-foreground mb-4">Subscribe to get the latest recipes and updates.</p>
+  <form class="space-y-2">
+    <div class="flex w-full max-w-sm items-center space-x-2">
+      <input type="email" placeholder="Email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+      <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+        Subscribe
+      </button>
+    </div>
+  </form>
+</div>
+</div>
+
+<div class="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
+<p>&copy; 2023 Fara's Kitchen. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+<script>
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
+const closeIcon = document.getElementById('close-icon');
+
+mobileMenuButton.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+menuIcon.classList.toggle('hidden');
+closeIcon.classList.toggle('hidden');
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Set to light mode by default
+if (html.classList.contains('dark')) {
+html.classList.remove('dark');
+}
+
+themeToggle.addEventListener('click', () => {
+html.classList.toggle('dark');
+});
+
+// Rating Stars
+const stars = document.querySelectorAll('.hover\\:text-yellow-400');
+stars.forEach((star, index) => {
+star.addEventListener('click', () => {
+  stars.forEach((s, i) => {
+    if (i <= index) {
+      s.classList.remove('text-muted');
+      s.classList.add('text-yellow-400');
+    } else {
+      s.classList.remove('text-yellow-400');
+      s.classList.add('text-muted');
+    }
+  });
+});
+});
+</script>
+</body>
+</html>

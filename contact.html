@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Fara's Kitchen</title>
+<meta name="description" content="Get in touch with Fara from Fara's Kitchen for recipe inquiries, collaborations, or just to say hello">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+darkMode: ["class"],
+theme: {
+  container: {
+    center: true,
+    padding: "2rem",
+    screens: {
+      "2xl": "1400px",
+    },
+  },
+  extend: {
+    colors: {
+      border: "hsl(var(--border))",
+      input: "hsl(var(--input))",
+      ring: "hsl(var(--ring))",
+      background: "hsl(var(--background))",
+      foreground: "hsl(var(--foreground))",
+      primary: {
+        DEFAULT: "#e11d48",
+        foreground: "#ffffff",
+      },
+      secondary: {
+        DEFAULT: "hsl(var(--secondary))",
+        foreground: "hsl(var(--secondary-foreground))",
+      },
+      destructive: {
+        DEFAULT: "hsl(var(--destructive))",
+        foreground: "hsl(var(--destructive-foreground))",
+      },
+      muted: {
+        DEFAULT: "#f3f4f6",
+        foreground: "#6b7280",
+      },
+      accent: {
+        DEFAULT: "hsl(var(--accent))",
+        foreground: "hsl(var(--accent-foreground))",
+      },
+      card: {
+        DEFAULT: "#ffffff",
+        foreground: "#1f2937",
+      },
+    },
+    borderRadius: {
+      lg: "0.5rem",
+      md: "0.375rem",
+      sm: "0.25rem",
+    },
+  },
+},
+}
+</script>
+<style>
+:root {
+--background: 0 0% 100%;
+--foreground: 222.2 84% 4.9%;
+--card: 0 0% 100%;
+--card-foreground: 222.2 84% 4.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 222.2 84% 4.9%;
+--primary: 346 77% 50%;
+--primary-foreground: 210 40% 98%;
+--secondary: 210 40% 96.1%;
+--secondary-foreground: 222.2 47.4% 11.2%;
+--muted: 210 40% 96.1%;
+--muted-foreground: 215.4 16.3% 46.9%;
+--accent: 210 40% 96.1%;
+--accent-foreground: 222.2 47.4% 11.2%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 210 40% 98%;
+--border: 214.3 31.8% 91.4%;
+--input: 214.3 31.8% 91.4%;
+--ring: 346 77% 50%;
+--radius: 0.5rem;
+}
+
+.dark {
+--background: 222.2 84% 4.9%;
+--foreground: 210 40% 98%;
+--card: 222.2 84% 4.9%;
+--card-foreground: 210 40% 98%;
+--popover: 222.2 84% 4.9%;
+--popover-foreground: 210 40% 98%;
+--primary: 346 77% 50%;
+--primary-foreground: 210 40% 98%;
+--secondary: 217.2 32.6% 17.5%;
+--secondary-foreground: 210 40% 98%;
+--muted: 217.2 32.6% 17.5%;
+--muted-foreground: 215 20.2% 65.1%;
+--accent: 217.2 32.6% 17.5%;
+--accent-foreground: 210 40% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 210 40% 98%;
+--border: 217.2 32.6% 17.5%;
+--input: 217.2 32.6% 17.5%;
+--ring: 346 77% 50%;
+}
+</style>
+</head>
+<body class="bg-background text-foreground">
+<div class="flex flex-col min-h-screen">
+<!-- Header/Navbar -->
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+<div class="container flex h-16 items-center justify-between">
+  <div class="flex items-center">
+    <a href="index.html" class="text-2xl font-bold mr-8 text-primary">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/culinary-chronicles-logo.png-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Fara's Kitchen Logo" class="h-10 w-auto" />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="index.html" class="text-sm font-medium hover:text-primary transition-colors">
+        Home
+      </a>
+      <a href="recipes.html" class="text-sm font-medium hover:text-primary transition-colors">
+        Recipes
+      </a>
+      <a href="blog.html" class="text-sm font-medium hover:text-primary transition-colors">
+        Blog
+      </a>
+      <a href="videos.html" class="text-sm font-medium hover:text-primary transition-colors">
+        Videos
+      </a>
+      <a href="about.html" class="text-sm font-medium hover:text-primary transition-colors">
+        About
+      </a>
+      <a href="contact.html" class="text-sm font-medium text-primary transition-colors">
+        Contact
+      </a>
+    </nav>
+  </div>
+
+  <div class="flex items-center space-x-4">
+    <button class="p-2 rounded-md hover:bg-muted" id="theme-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+    </button>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-muted md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="close-icon" class="hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="md:hidden border-t hidden">
+  <nav class="flex flex-col space-y-4 p-4">
+    <a href="index.html" class="text-sm font-medium hover:text-primary transition-colors">
+      Home
+    </a>
+    <a href="recipes.html" class="text-sm font-medium hover:text-primary transition-colors">
+      Recipes
+    </a>
+    <a href="blog.html" class="text-sm font-medium hover:text-primary transition-colors">
+      Blog
+    </a>
+    <a href="videos.html" class="text-sm font-medium hover:text-primary transition-colors">
+      Videos
+    </a>
+    <a href="about.html" class="text-sm font-medium hover:text-primary transition-colors">
+      About
+    </a>
+    <a href="contact.html" class="text-sm font-medium text-primary transition-colors">
+      Contact
+    </a>
+  </nav>
+</div>
+</header>
+
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative">
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10"></div>
+  <div class="relative h-[300px] md:h-[400px]">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/North%20Indian%20cuisine.jpg-EvMuvrerDRKeRtljD8vi0G03ooHSPc.jpeg" alt="North Indian Cuisine" class="w-full h-full object-cover" />
+  </div>
+  <div class="absolute inset-0 flex items-center z-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Contact Me</h1>
+        <p class="text-xl text-white/90">Have questions or want to collaborate? I'd love to hear from you!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+        <p class="text-muted-foreground mb-8">Have a question about a recipe? Want to collaborate on a project? Or just want to say hello? Fill out the form below and I'll get back to you as soon as possible.</p>
+        
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+            <div class="bg-primary/10 p-3 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold">Phone</h3>
+              <p class="text-muted-foreground">+1 (555) 123-4567</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4">
+            <div class="bg-primary/10 p-3 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold">Email</h3>
+              <p class="text-muted-foreground">farafoodblog@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4">
+            <div class="bg-primary/10 p-3 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <h3 class="font-bold">Location</h3>
+              <p class="text-muted-foreground">Mumbai, India</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4">
+            <div class="bg-primary/10 p-3 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold">Response Time</h3>
+              <p class="text-muted-foreground">Usually within 24-48 hours</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8">
+          <h3 class="font-bold mb-4">Follow Me</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="bg-muted p-3 rounded-full hover:bg-primary/10 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="bg-muted p-3 rounded-full hover:bg-primary/10 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="bg-muted p-3 rounded-full hover:bg-primary/10 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+            </a>
+            <a href="#" class="bg-muted p-3 rounded-full hover:bg-primary/10 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+            </a>
+            <a href="#" class="bg-muted p-3 rounded-full hover:bg-primary/10 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="bg-card rounded-lg shadow-sm p-8">
+          <h3 class="text-xl font-bold mb-6">Send Me a Message</h3>
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="name" class="text-sm font-medium">Name</label>
+                <input id="name" type="text" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Your name" required />
+              </div>
+              <div class="space-y-2">
+                <label for="email" class="text-sm font-medium">Email</label>
+                <input id="email" type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Your email" required />
+              </div>
+            </div>
+            
+            <div class="space-y-2">
+              <label for="subject" class="text-sm font-medium">Subject</label>
+              <input id="subject" type="text" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Subject of your message" required />
+            </div>
+            
+            <div class="space-y-2">
+              <label for="message" class="text-sm font-medium">Message</label>
+              <textarea id="message" class="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Your message" required></textarea>
+            </div>
+            
+            <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recipe Submission Section -->
+<section class="py-16 bg-muted" id="recipe-submission">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">Submit Your Recipe</h2>
+      <p class="text-muted-foreground mb-8 text-center">Have a family recipe you'd like to share with the Fara's Kitchen community? I'd love to feature it on the site! Fill out the form below with your recipe details.</p>
+      
+      <div class="bg-card rounded-lg shadow-sm p-8">
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="recipe-name" class="text-sm font-medium">Recipe Name</label>
+              <input id="recipe-name" type="text" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Name of your recipe" required />
+            </div>
+            <div class="space-y-2">
+              <label for="recipe-category" class="text-sm font-medium">Category</label>
+              <select id="recipe-category" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required>
+                <option value="">Select a category</option>
+                <option value="north-indian">North Indian</option>
+                <option value="south-indian">South Indian</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="desserts">Desserts</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="snacks">Snacks</option>
+                <option value="quick-easy">Quick & Easy</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="space-y-2">
+            <label for="recipe-description" class="text-sm font-medium">Brief Description</label>
+            <textarea id="recipe-description" class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="A brief description of your recipe" required></textarea>
+          </div>
+          
+          <div class="space-y-2">
+            <label for="recipe-ingredients" class="text-sm font-medium">Ingredients</label>
+            <textarea id="recipe-ingredients" class="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="List your ingredients, one per line" required></textarea>
+          </div>
+          
+          <div class="space-y-2">
+            <label for="recipe-instructions" class="text-sm font-medium">Instructions</label>
+            <textarea id="recipe-instructions" class="flex min-h-[150px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Step-by-step instructions for your recipe" required></textarea>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="recipe-prep-time" class="text-sm font-medium">Prep Time (minutes)</label>
+              <input id="recipe-prep-time" type="number" min="0" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Preparation time in minutes" required />
+            </div>
+            <div class="space-y-2">
+              <label for="recipe-cook-time" class="text-sm font-medium">Cook Time (minutes)</label>
+              <input id="recipe-cook-time" type="number" min="0" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Cooking time in minutes" required />
+            </div>
+          </div>
+          
+          <div class="space-y-2">
+            <label for="recipe-image" class="text-sm font-medium">Recipe Image (optional)</label>
+            <input id="recipe-image" type="file" accept="image/*" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+            <p class="text-xs text-muted-foreground">Upload a photo of your finished dish (max 5MB)</p>
+          </div>
+          
+          <div class="space-y-2">
+            <label for="recipe-notes" class="text-sm font-medium">Additional Notes (optional)</label>
+            <textarea id="recipe-notes" class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Any additional notes, tips, or variations"></textarea>
+          </div>
+          
+          <div class="space-y-2">
+            <label for="your-name" class="text-sm font-medium">Your Name</label>
+            <input id="your-name" type="text" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Your name" required />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="your-email" class="text-sm font-medium">Your Email</label>
+            <input id="your-email" type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Your email" required />
+          </div>
+          
+          <div class="flex items-start space-x-2">
+            <input id="terms" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" required />
+            <label for="terms" class="text-sm text-muted-foreground">
+              I agree that by submitting this recipe, I grant Fara's Kitchen permission to publish it on the website with credit to me.
+            </label>
+          </div>
+          
+          <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
+            Submit Recipe
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+    <div class="max-w-3xl mx-auto space-y-6">
+      <div class="bg-card rounded-lg shadow-sm p-6">
+        <h3 class="text-xl font-bold mb-2">How can I collaborate with Fara's Kitchen?</h3>
+        <p class="text-muted-foreground">I'm always open to collaborations with brands, fellow food bloggers, and content creators. Please use the contact form above to reach out with your proposal, and I'll get back to you as soon as possible.</p>
+      </div>
+      
+      <div class="bg-card rounded-lg shadow-sm p-6">
+        <h3 class="text-xl font-bold mb-2">Can I request a specific recipe?</h3>
+        <p class="text-muted-foreground">I love hearing from readers about what recipes they'd like to see. Use the contact form to send your recipe request, and I'll do my best to create and share it on the blog.</p>
+      </div>
+      
+      <div class="bg-card rounded-lg shadow-sm p-6">
+        <h3 class="text-xl font-bold mb-2">Do you offer cooking classes or workshops?</h3>
+        <p class="text-muted-foreground">Yes, I occasionally offer virtual cooking classes and in-person workshops in the Mumbai area. Sign up for my newsletter to be notified about upcoming classes and events.</p>
+      </div>
+      
+      <div class="bg-card rounded-lg shadow-sm p-6">
+        <h3 class="text-xl font-bold mb-2">Can I use your recipes on my website or blog?</h3>
+        <p class="text-muted-foreground">While I appreciate your interest in my recipes, they are protected by copyright. You may share a link to my recipe on your site, but please do not republish the full recipe without permission. Contact me if you'd like to discuss licensing options.</p>
+      </div>
+      
+      <div class="bg-card rounded-lg shadow-sm p-6">
+        <h3 class="text-xl font-bold mb-2">How can I support Fara's Kitchen?</h3>
+        <p class="text-muted-foreground">The best way to support my work is to share my recipes with friends and family, follow me on social media, and leave comments on recipes you've tried. Your engagement helps the blog grow and reach more food enthusiasts!</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-muted py-12">
+<div class="container mx-auto px-4">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div>
+      <a href="index.html" class="inline-block mb-4">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/culinary-chronicles-logo.png-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Fara's Kitchen Logo" class="h-10 w-auto" />
+      </a>
+      <p class="text-muted-foreground mb-4">Sharing authentic Indian recipes and culinary stories from my kitchen to yours.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="text-muted-foreground hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="#" class="text-muted-foreground hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+        </a>
+        <a href="#" class="text-muted-foreground hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+        </a>
+        <a href="#" class="text-muted-foreground hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div>
+      <h3 class="font-bold mb-4">Explore</h3>
+      <ul class="space-y-2">
+        <li><a href="index.html" class="text-muted-foreground hover:text-primary">Home</a></li>
+        <li><a href="recipes.html" class="text-muted-foreground hover:text-primary">Recipes</a></li>
+        <li><a href="blog.html" class="text-muted-foreground hover:text-primary">Blog</a></li>
+        <li><a href="videos.html" class="text-muted-foreground hover:text-primary">Videos</a></li>
+        <li><a href="about.html" class="text-muted-foreground hover:text-primary">About</a></li>
+        <li><a href="contact.html" class="text-muted-foreground hover:text-primary">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h3 class="font-bold mb-4">Recipe Categories</h3>
+      <ul class="space-y-2">
+        <li><a href="recipes.html?category=north-indian" class="text-muted-foreground hover:text-primary">North Indian</a></li>
+        <li><a href="recipes.html?category=south-indian" class="text-muted-foreground hover:text-primary">South Indian</a></li>
+        <li><a href="recipes.html?category=vegetarian" class="text-muted-foreground hover:text-primary">Vegetarian</a></li>
+        <li><a href="recipes.html?category=desserts" class="text-muted-foreground hover:text-primary">Desserts</a></li>
+        <li><a href="recipes.html?category=quick-easy" class="text-muted-foreground hover:text-primary">Quick & Easy</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h3 class="font-bold mb-4">Subscribe</h3>
+      <p class="text-muted-foreground mb-4">Subscribe to get the latest recipes and updates.</p>
+      <form class="space-y-2">
+        <div class="flex w-full max-w-sm items-center space-x-2">
+          <input type="email" placeholder="Email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+          <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
+    <p>&copy; 2023 Fara's Kitchen. All rights reserved.</p>
+  </div>
+</div>
+</footer>
+</div>
+
+<script>
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
+const closeIcon = document.getElementById('close-icon');
+
+mobileMenuButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  menuIcon.classList.toggle('hidden');
+  closeIcon.classList.toggle('hidden');
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Set to light mode by default
+if (html.classList.contains('dark')) {
+  html.classList.remove('dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  html.classList.toggle('dark');
+});
+</script>
+</body>
+</html>

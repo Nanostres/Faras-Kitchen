@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videos | Fara's Kitchen</title>
+<meta name="description" content="Watch cooking videos and tutorials for authentic Indian recipes from Fara's Kitchen">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+darkMode: ["class"],
+theme: {
+  container: {
+    center: true,
+    padding: "2rem",
+    screens: {
+      "2xl": "1400px",
+    },
+  },
+  extend: {
+    colors: {
+      border: "hsl(var(--border))",
+      input: "hsl(var(--input))",
+      ring: "hsl(var(--ring))",
+      background: "hsl(var(--background))",
+      foreground: "hsl(var(--foreground))",
+      primary: {
+        DEFAULT: "#e11d48",
+        foreground: "#ffffff",
+      },
+      secondary: {
+        DEFAULT: "hsl(var(--secondary))",
+        foreground: "hsl(var(--secondary-foreground))",
+      },
+      destructive: {
+        DEFAULT: "hsl(var(--destructive))",
+        foreground: "hsl(var(--destructive-foreground))",
+      },
+      muted: {
+        DEFAULT: "#f3f4f6",
+        foreground: "#6b7280",
+      },
+      accent: {
+        DEFAULT: "hsl(var(--accent))",
+        foreground: "hsl(var(--accent-foreground))",
+      },
+      card: {
+        DEFAULT: "#ffffff",
+        foreground: "#1f2937",
+      },
+    },
+    borderRadius: {
+      lg: "0.5rem",
+      md: "0.375rem",
+      sm: "0.25rem",
+    },
+  },
+},
+}
+</script>
+<style>
+:root {
+--background: 0 0% 100%;
+--foreground: 222.2 84% 4.9%;
+--card: 0 0% 100%;
+--card-foreground: 222.2 84% 4.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 222.2 84% 4.9%;
+--primary: 346 77% 50%;
+--primary-foreground: 210 40% 98%;
+--secondary: 210 40% 96.1%;
+--secondary-foreground: 222.2 47.4% 11.2%;
+--muted: 210 40% 96.1%;
+--muted-foreground: 215.4 16.3% 46.9%;
+--accent: 210 40% 96.1%;
+--accent-foreground: 222.2 47.4% 11.2%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 210 40% 98%;
+--border: 214.3 31.8% 91.4%;
+--input: 214.3 31.8% 91.4%;
+--ring: 346 77% 50%;
+--radius: 0.5rem;
+}
+
+.dark {
+--background: 222.2 84% 4.9%;
+--foreground: 210 40% 98%;
+--card: 222.2 84% 4.9%;
+--card-foreground: 210 40% 98%;
+--popover: 222.2 84% 4.9%;
+--popover-foreground: 210 40% 98%;
+--primary: 346 77% 50%;
+--primary-foreground: 210 40% 98%;
+--secondary: 217.2 32.6% 17.5%;
+--secondary-foreground: 210 40% 98%;
+--muted: 217.2 32.6% 17.5%;
+--muted-foreground: 215 20.2% 65.1%;
+--accent: 217.2 32.6% 17.5%;
+--accent-foreground: 210 40% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 210 40% 98%;
+--border: 217.2 32.6% 17.5%;
+--input: 217.2 32.6% 17.5%;
+--ring: 346 77% 50%;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>
+</head>
+<body class="bg-background text-foreground">
+<div class="flex flex-col min-h-screen">
+<!-- Header/Navbar -->
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+<div class="container flex h-16 items-center justify-between">
+  <div class="flex items-center">
+    <a href="index.html" class="text-2xl font-bold mr-8 text-primary">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/culinary-chronicles-logo.png-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Fara's Kitchen Logo" class="h-10 w-auto" />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="index.html" class="text-sm font-medium hover:text-primary transition-colors">
+        Home
+      </a>
+      <a href="recipes.html" class="text-sm font-medium hover:text-primary transition-colors">
+        Recipes
+      </a>
+      <a href="blog.html" class="text-sm font-medium hover:text-primary transition-colors">
+        Blog
+      </a>
+      <a href="videos.html" class="text-sm font-medium text-primary transition-colors">
+        Videos
+      </a>
+      <a href="about.html" class="text-sm font-medium hover:text-primary transition-colors">
+        About
+      </a>
+      <a href="contact.html" class="text-sm font-medium hover:text-primary transition-colors">
+        Contact
+      </a>
+    </nav>
+  </div>
+
+  <div class="flex items-center space-x-4">
+    <button class="p-2 rounded-md hover:bg-muted" id="theme-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+    </button>
+    <div class="relative">
+      <input type="text" placeholder="Search videos..." class="flex h-9 w-[200px] rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-muted md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="close-icon" class="hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="md:hidden border-t hidden">
+  <nav class="flex flex-col space-y-4 p-4">
+    <a href="index.html" class="text-sm font-medium hover:text-primary transition-colors">
+      Home
+    </a>
+    <a href="recipes.html" class="text-sm font-medium hover:text-primary transition-colors">
+      Recipes
+    </a>
+    <a href="blog.html" class="text-sm font-medium hover:text-primary transition-colors">
+      Blog
+    </a>
+    <a href="videos.html" class="text-sm font-medium text-primary transition-colors">
+      Videos
+    </a>
+    <a href="about.html" class="text-sm font-medium hover:text-primary transition-colors">
+      About
+    </a>
+    <a href="contact.html" class="text-sm font-medium hover:text-primary transition-colors">
+      Contact
+    </a>
+  </nav>
+</div>
+</header>
+
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative">
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10"></div>
+  <div class="relative h-[300px] md:h-[400px]">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/indian%20cuisine.jpg-0FoG9eB6PS6bXHzuGAgSm7UgQTAq4c.jpeg" alt="Indian Cuisine" class="w-full h-full object-cover" />
+  </div>
+  <div class="absolute inset-0 flex items-center z-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Cooking Videos</h1>
+        <p class="text-xl text-white/90">Watch and learn how to prepare authentic Indian dishes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Categories -->
+<section class="py-12 bg-muted">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="videos.html" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+        All Videos
+      </a>
+      <a href="videos.html?category=north-indian" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-card text-card-foreground hover:bg-muted transition-colors">
+        North Indian
+      </a>
+      <a href="videos.html?category=south-indian" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-card text-card-foreground hover:bg-muted transition-colors">
+        South Indian
+      </a>
+      <a href="videos.html?category=vegetarian" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-card text-card-foreground hover:bg-muted transition-colors">
+        Vegetarian
+      </a>
+      <a href="videos.html?category=desserts" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-card text-card-foreground hover:bg-muted transition-colors">
+        Desserts
+      </a>
+      <a href="videos.html?category=cooking-tips" class="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-card text-card-foreground hover:bg-muted transition-colors">
+        Cooking Tips
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Video -->
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-12 text-center">Featured Video</h2>
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How to Make Perfect Dal Makhani" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">How to Make Perfect Dal Makhani</h3>
+          <div class="flex items-center mb-4">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">North Indian</span>
+            <span class="text-xs text-muted-foreground flex items-center mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              15:32
+            </span>
+            <span class="text-xs text-muted-foreground">March 15, 2023</span>
+          </div>
+          <p class="text-muted-foreground mb-4">Learn how to make the perfect Dal Makhani with this step-by-step video tutorial. I'll show you all the secrets to achieving that rich, creamy texture and deep flavor that makes this dish so special.</p>
+          <div class="flex items-center justify-between">
+            <a href="recipe-detail-dal-makhani.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+              View Recipe
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <div class="flex items-center space-x-4">
+              <button class="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                245
+              </button>
+              <button class="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                42
+              </button>
+              <button class="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                Share
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Grid -->
+<section class="py-16 bg-muted">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-12 text-center">Latest Videos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Video 1 -->
+      <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+        <div class="relative">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/chole%20bhature.jpg-57Pw4TdBspgmjQdIPpL0B784XJk8fO.jpeg" alt="Chole Bhature Recipe" class="w-full h-48 object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="w-12 h-12 bg-primary/90 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+          <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">12:45</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-2">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">North Indian</span>
+            <span class="text-xs text-muted-foreground">March 10, 2023</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">
+            <a href="#" class="hover:text-primary transition-colors">Authentic Chole Bhature Recipe</a>
+          </h3>
+          <p class="text-muted-foreground mb-4">Learn how to make delicious Chole Bhature, a popular Punjabi dish featuring spicy chickpea curry and fluffy fried bread.</p>
+          <div class="flex items-center justify-between">
+            <a href="recipe-detail-chole-bhature.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+              View Recipe
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <div class="flex items-center space-x-2">
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                187
+              </span>
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                32
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 2 -->
+      <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+        <div class="relative">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tandoori%20chicken.jpg-CUNjaF4Auc1JxxsHBCPOCk7GE59FO4.jpeg" alt="Tandoori Chicken Recipe" class="w-full h-48 object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="w-12 h-12 bg-primary/90 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+          <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">14:20</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-2">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">North Indian</span>
+            <span class="text-xs text-muted-foreground">March 5, 2023</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">
+            <a href="#" class="hover:text-primary transition-colors">Perfect Tandoori Chicken at Home</a>
+          </h3>
+          <p class="text-muted-foreground mb-4">Make restaurant-quality tandoori chicken at home with this foolproof recipe and technique. No tandoor oven required!</p>
+          <div class="flex items-center justify-between">
+            <a href="recipe-detail-tandoori-chicken.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+              View Recipe
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <div class="flex items-center space-x-2">
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                215
+              </span>
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                45
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 3 -->
+      <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+        <div class="relative">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aloo%20paratha.jpg-AvY3w4WGy377WwJOPIpK21wecTB7PZ.jpeg" alt="Aloo Paratha Recipe" class="w-full h-48 object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="w-12 h-12 bg-primary/90 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+          <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">10:35</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-2">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">Breakfast</span>
+            <span class="text-xs text-muted-foreground">February 28, 2023</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">
+            <a href="#" class="hover:text-primary transition-colors">How to Make Perfect Aloo Paratha</a>
+          </h3>
+          <p class="text-muted-foreground mb-4">Learn the secrets to making soft, flavorful aloo parathas with perfectly spiced potato filling that doesn't leak out.</p>
+          <div class="flex items-center justify-between">
+            <a href="recipe-detail-aloo-paratha.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+              View Recipe
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <div class="flex items-center space-x-2">
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                178
+              </span>
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                38
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 4 -->
+      <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+        <div class="relative">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Amritsari%20Kulcha.jpg-CJehh1HkfWK5reEKJViupvonNGpkOF.jpeg" alt="Amritsari Kulcha Recipe" class="w-full h-48 object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="w-12 h-12 bg-primary/90 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+          <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">16:42</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-2">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">North Indian</span>
+            <span class="text-xs text-muted-foreground">February 20, 2023</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">
+            <a href="#" class="hover:text-primary transition-colors">Authentic Amritsari Kulcha Recipe</a>
+          </h3>
+          <p class="text-muted-foreground mb-4">Learn how to make the famous Amritsari kulcha with its signature herb topping and perfect texture.</p>
+          <div class="flex items-center justify-between">
+            <a href="recipe-detail-amritsari-kulcha.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+              View Recipe
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <div class="flex items-center space-x-2">
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                156
+              </span>
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                29
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 5 -->
+      <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+        <div class="relative">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dal%20makhani.jpg-ku3KoW7JHRpjLM5BM7TLj0HA0yH0Zk.jpeg" alt="Dal Makhani Recipe" class="w-full h-48 object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="w-12 h-12 bg-primary/90 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+          <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">13:25</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-2">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">North Indian</span>
+            <span class="text-xs text-muted-foreground">February 15, 2023</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">
+            <a href="#" class="hover:text-primary transition-colors">Creamy Dal Makhani: Restaurant Style</a>
+          </h3>
+          <p class="text-muted-foreground mb-4">Master the art of making restaurant-style creamy dal makhani with this detailed video tutorial.</p>
+          <div class="flex items-center justify-between">
+            <a href="recipe-detail-dal-makhani.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+              View Recipe
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <div class="flex items-center space-x-2">
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                203
+              </span>
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                47
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 6 -->
+      <div class="bg-card rounded-lg shadow-sm overflow-hidden">
+        <div class="relative">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/indian%20desserts.jpg-Y0W3pOYgnknnvG8Y7lYAZsIZz7LsLu.jpeg" alt="Indian Desserts" class="w-full h-48 object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <button class="w-12 h-12 bg-primary/90 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+          <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">11:18</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-2">
+            <span class="text-xs font-medium bg-primary/10 text-primary rounded-full px-2 py-1 mr-2">Desserts</span>
+            <span class="text-xs text-muted-foreground">February 10, 2023</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">
+            <a href="#" class="hover:text-primary transition-colors">How to Make Perfect Gulab Jamun</a>
+          </h3>
+          <p class="text-muted-foreground mb-4">Learn how to make soft, juicy gulab jamun that melts in your mouth with this foolproof recipe.</p>
+          <div class="flex items-center justify-between">
+            <a href="recipe-detail-gulab-jamun.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+              View Recipe
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <div class="flex items-center space-x-2">
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                192
+              </span>
+              <span class="text-xs text-muted-foreground flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                35
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Pagination -->
+    <div class="flex justify-center mt-12">
+      <nav class="flex items-center space-x-2">
+        <a href="#" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 w-9">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="m15 18-6-6 6-6"></path></svg>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a href="#" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-input bg-primary text-primary-foreground hover:bg-primary/90 h-9 w-9">1</a>
+        <a href="#" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 w-9">2</a>
+        <a href="#" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 w-9">3</a>
+        <span class="inline-flex items-center justify-center rounded-md text-sm font-medium h-9 w-9">...</span>
+        <a href="#" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 w-9">8</a>
+        <a href="#" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 w-9">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="m9 18 6-6-6-6"></path></svg>
+          <span class="sr-only">Next</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- Subscribe Section -->
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Subscribe to My YouTube Channel</h2>
+      <p class="text-muted-foreground mb-8">Get notified when I post new cooking videos, tutorials, and recipe demonstrations.</p>
+      <a href="https://www.youtube.com/" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+        Subscribe Now
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-muted py-12">
+<div class="container mx-auto px-4">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div>
+      <a href="index.html" class="inline-block mb-4">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/culinary-chronicles-logo.png-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9" alt="Fara's Kitchen Logo" class="h-10 w-auto" />
+      </a>
+      <p class="text-muted-foreground mb-4">Sharing authentic Indian recipes and culinary stories from my kitchen to yours.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="text-muted-foreground hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="#" class="text-muted-foreground hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+        </a>
+        <a href="#" class="text-muted-foreground hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+        </a>
+        <a href="#" class="text-muted-foreground hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div>
+      <h3 class="font-bold mb-4">Explore</h3>
+      <ul class="space-y-2">
+        <li><a href="index.html" class="text-muted-foreground hover:text-primary">Home</a></li>
+        <li><a href="recipes.html" class="text-muted-foreground hover:text-primary">Recipes</a></li>
+        <li><a href="blog.html" class="text-muted-foreground hover:text-primary">Blog</a></li>
+        <li><a href="videos.html" class="text-muted-foreground hover:text-primary">Videos</a></li>
+        <li><a href="about.html" class="text-muted-foreground hover:text-primary">About</a></li>
+        <li><a href="contact.html" class="text-muted-foreground hover:text-primary">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h3 class="font-bold mb-4">Recipe Categories</h3>
+      <ul class="space-y-2">
+        <li><a href="recipes.html?category=north-indian" class="text-muted-foreground hover:text-primary">North Indian</a></li>
+        <li><a href="recipes.html?category=south-indian" class="text-muted-foreground hover:text-primary">South Indian</a></li>
+        <li><a href="recipes.html?category=vegetarian" class="text-muted-foreground hover:text-primary">Vegetarian</a></li>
+        <li><a href="recipes.html?category=desserts" class="text-muted-foreground hover:text-primary">Desserts</a></li>
+        <li><a href="recipes.html?category=quick-easy" class="text-muted-foreground hover:text-primary">Quick & Easy</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h3 class="font-bold mb-4">Subscribe</h3>
+      <p class="text-muted-foreground mb-4">Subscribe to get the latest recipes and updates.</p>
+      <form class="space-y-2">
+        <div class="flex w-full max-w-sm items-center space-x-2">
+          <input type="email" placeholder="Email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+          <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
+    <p>&copy; 2023 Fara's Kitchen. All rights reserved.</p>
+  </div>
+</div>
+</footer>
+</div>
+
+<script>
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
+const closeIcon = document.getElementById('close-icon');
+
+mobileMenuButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  menuIcon.classList.toggle('hidden');
+  closeIcon.classList.toggle('hidden');
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Set to light mode by default
+if (html.classList.contains('dark')) {
+  html.classList.remove('dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  html.classList.toggle('dark');
+});
+</script>
+</body>
+</html>
